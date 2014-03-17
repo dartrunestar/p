@@ -11,7 +11,25 @@
         android:layout_height="fill_parent"
         android:shrinkColumns="*"
         android:stretchColumns="*" >
- 
+
+ 	<TableRow
+ 	    android:layout_width="match_parent"
+ 	    android:layout_height="wrap_content"
+ 	    android:layout_marginLeft="10dp" >
+
+             <TextView
+                android:id="@+id/lbl_cash"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:text="@string/cash" />
+            <TextView
+                android:id="@+id/edit_cash"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                />
+
+        </TableRow>
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
@@ -154,7 +172,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dip" >
- 
+
+            <Button
+                android:id="@+id/bn_buy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buy Stock" />
+
+            <EditText
+                android:id="@+id/stockQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10" >
+
+                <requestFocus />
+            </EditText>
+
             <ImageView
                 android:id="@+id/img_chart"
                 android:layout_width="fill_parent"
@@ -162,7 +195,14 @@
                 android:layout_gravity="center"
                 android:layout_span="2"
                 android:contentDescription="@string/stock_chart" />
+
         </TableRow>
+
+        <TextView
+            android:id="@+id/lbl_message"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content" />
+
     </TableLayout>
  
 </LinearLayout>
