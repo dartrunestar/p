@@ -35,7 +35,14 @@ public class BuyFragment extends Fragment implements OnClickListener{
 	// string array for stock information
 	public String[] stockInfo = new String[7];
 	TextView[] label = new TextView[7];
+	
     public double cash = PortfolioSellFragment.getCash();
+	public String chkQuantity0 = PortfolioSellFragment.getQuantity0();
+	public String chkQuantity1 = PortfolioSellFragment.getQuantity1();
+	public String chkQuantity2 = PortfolioSellFragment.getQuantity2();
+	public String chkQuantity3 = PortfolioSellFragment.getQuantity3();
+	public String chkQuantity4 = PortfolioSellFragment.getQuantity4();
+
     private Button bnRetrieve = null;
     private Button bnBuy = null;
 
@@ -47,7 +54,7 @@ public class BuyFragment extends Fragment implements OnClickListener{
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         super.onCreate(savedInstanceState);
         
- 
+
        
         textBox = (EditText) rootView.findViewById(R.id.edit_symbol);
         stockQuantity = (EditText) rootView.findViewById(R.id.stockQuantity);
@@ -112,14 +119,14 @@ public class BuyFragment extends Fragment implements OnClickListener{
 		}
 	}
 
-   
+
 	 private class AsyncTaskRunner extends AsyncTask<String, Void, String> {
 
 
 		  @Override
 		  protected String doInBackground(String... s) {
 				HttpURLConnection connection = null;
-			    String  symbol = textBox.getText().toString();
+				String  symbol = textBox.getText().toString();  
 				String site= YAHOO+symbol+"&f=snxvl1c1p2&e=.csv";
 				try {
 					connection = (HttpURLConnection) new URL(site).openConnection();
@@ -153,8 +160,31 @@ public class BuyFragment extends Fragment implements OnClickListener{
 		  @Override
 		  protected void onPostExecute(String result) {
 		   // execution of result of Long time consuming operation
+			  
+			  
+				chkQuantity0 = PortfolioSellFragment.getQuantity0();
+				chkQuantity1 = PortfolioSellFragment.getQuantity1();
+				chkQuantity2 = PortfolioSellFragment.getQuantity2();
+				chkQuantity3 = PortfolioSellFragment.getQuantity3();
+				chkQuantity4 = PortfolioSellFragment.getQuantity4();
+			  	
 				stockInfo = result.split(",");
 				setInfo(label, stockInfo);
+				String  symbol = textBox.getText().toString();  
+				if (symbol.equals(PortfolioSellFragment.getSymbol0()) == true)
+				{
+					textview2.setText("Current stock:" + chkQuantity0);
+				}
+				else if (symbol.equals(PortfolioSellFragment.getSymbol1()) == true)
+				{
+					textview2.setText("Current stock:" + chkQuantity1);
+				}
+				else
+				{
+					textview2.setText("Current stock: 0");
+
+				}
+				
 		  }
 
 		  /*
@@ -186,34 +216,144 @@ public class BuyFragment extends Fragment implements OnClickListener{
 		 try
 		 {
 
+			 cash = PortfolioSellFragment.getCash();
+			 
+			 chkQuantity0 = PortfolioSellFragment.getQuantity0();
+			 chkQuantity1 = PortfolioSellFragment.getQuantity1();
+			 chkQuantity2 = PortfolioSellFragment.getQuantity2();
+			 chkQuantity3 = PortfolioSellFragment.getQuantity3();
+			 chkQuantity4 = PortfolioSellFragment.getQuantity4();
 
+			 
+			 
 			 if (stockQuantity.getText().toString().length() == 0)
 			 {
 				 textview2.setText("Choose stock and specify quantity");
 			 }
 
-			 else if (stockQuantity.getText().toString().length() > 0 && label[4].getText().toString().length() > 0 && Double.parseDouble(stockQuantity.getText().toString()) > 0)
-			 {		 
+			 else if (stockQuantity.getText().toString().length() > 0 && label[4].getText().toString().length() > 0 && Double.parseDouble(label[4].getText().toString()) > 0 && Double.parseDouble(stockQuantity.getText().toString()) > 0)
+			 {		
+
 				 String x = stockQuantity.getText().toString();
 				 int y = Integer.parseInt(x);
 				 String p = label[4].getText().toString();
 				 double price = Double.parseDouble(p);
 			 	if (cash > y*price)
 			 	{
-
-			 		textview2.setText("Purchase successful");
-			 		PortfolioSellFragment.setCash(cash - y*price);
-			 		PortfolioSellFragment.setSymbol0(textBox.getText().toString());
-			 		PortfolioSellFragment.setQuantity0(x);
-			 		PortfolioSellFragment.setRadioOn1True();
-			        textview.setText(String.format("%.2f", cash - y*price));
+			 		String  symbol = textBox.getText().toString();
+			 		int sum;
+			 		if (symbol.equals(PortfolioSellFragment.getSymbol0()) == true)
+			 		{
+		 				textview2.setText("Purchase successful");
+		 				PortfolioSellFragment.setCash(cash - y*price);
+		 				PortfolioSellFragment.setSymbol0(textBox.getText().toString());
+		 				sum = Integer.parseInt(chkQuantity0) + y;
+		 				PortfolioSellFragment.setQuantity0(Integer.toString(sum));
+		 				textview.setText(String.format("%.2f", cash - y*price));
+			 		}
+			 		
+			 		else if (symbol.equals(PortfolioSellFragment.getSymbol1()) == true)
+			 		{
+		 				textview2.setText("Purchase successful");
+		 				PortfolioSellFragment.setCash(cash - y*price);
+		 				PortfolioSellFragment.setSymbol1(textBox.getText().toString());
+		 				sum = Integer.parseInt(chkQuantity1) + y;
+		 				PortfolioSellFragment.setQuantity1(Integer.toString(sum));
+		 				textview.setText(String.format("%.2f", cash - y*price));
+			 		}
+			 		
+			 		else if (symbol.equals(PortfolioSellFragment.getSymbol2()) == true)
+			 		{
+		 				textview2.setText("Purchase successful");
+		 				PortfolioSellFragment.setCash(cash - y*price);
+		 				PortfolioSellFragment.setSymbol2(textBox.getText().toString());
+		 				sum = Integer.parseInt(chkQuantity2) + y;
+		 				PortfolioSellFragment.setQuantity2(Integer.toString(sum));
+		 				textview.setText(String.format("%.2f", cash - y*price));
+			 		}
+			 		else if (symbol.equals(PortfolioSellFragment.getSymbol3()) == true)
+			 		{
+		 				textview2.setText("Purchase successful");
+		 				PortfolioSellFragment.setCash(cash - y*price);
+		 				PortfolioSellFragment.setSymbol3(textBox.getText().toString());
+		 				sum = Integer.parseInt(chkQuantity1) + y;
+		 				PortfolioSellFragment.setQuantity3(Integer.toString(sum));
+		 				textview.setText(String.format("%.2f", cash - y*price));
+			 		}
+			 		else if (symbol.equals(PortfolioSellFragment.getSymbol4()) == true)
+			 		{
+		 				textview2.setText("Purchase successful");
+		 				PortfolioSellFragment.setCash(cash - y*price);
+		 				PortfolioSellFragment.setSymbol4(textBox.getText().toString());
+		 				sum = Integer.parseInt(chkQuantity1) + y;
+		 				PortfolioSellFragment.setQuantity4(Integer.toString(sum));
+		 				textview.setText(String.format("%.2f", cash - y*price));
+			 		}
+			 		else
+			 		{
+			 			if (chkQuantity0 == null || chkQuantity0 == "")
+			 			{
+			 				textview2.setText("Purchase successful");
+			 				PortfolioSellFragment.setCash(cash - y*price);
+			 				PortfolioSellFragment.setSymbol0(textBox.getText().toString());
+			 				PortfolioSellFragment.setQuantity0(x);
+			 				PortfolioSellFragment.setCheckBoxOn0True();
+			 				textview.setText(String.format("%.2f", cash - y*price));
+			 			}
+			 		
+			 			else if (chkQuantity1 == null || chkQuantity1 == "")
+			 			{
+			 				textview2.setText("Purchase successful");
+			 				PortfolioSellFragment.setCash(cash - y*price);
+			 				PortfolioSellFragment.setSymbol1(textBox.getText().toString());
+			 				PortfolioSellFragment.setQuantity1(x);
+			 				PortfolioSellFragment.setCheckBoxOn1True();
+			 				textview.setText(String.format("%.2f", cash - y*price));
+			 			}
+			 			
+			 			else if (chkQuantity2 == null || chkQuantity2 == "")
+			 			{
+			 				textview2.setText("Purchase successful");
+			 				PortfolioSellFragment.setCash(cash - y*price);
+			 				PortfolioSellFragment.setSymbol2(textBox.getText().toString());
+			 				PortfolioSellFragment.setQuantity2(x);
+			 				PortfolioSellFragment.setCheckBoxOn2True();
+			 				textview.setText(String.format("%.2f", cash - y*price));
+			 			}
+			 			
+			 			else if (chkQuantity3 == null || chkQuantity3 == "")
+			 			{
+			 				textview2.setText("Purchase successful");
+			 				PortfolioSellFragment.setCash(cash - y*price);
+			 				PortfolioSellFragment.setSymbol3(textBox.getText().toString());
+			 				PortfolioSellFragment.setQuantity3(x);
+			 				PortfolioSellFragment.setCheckBoxOn3True();
+			 				textview.setText(String.format("%.2f", cash - y*price));
+			 			}
+			 			
+			 			else if (chkQuantity4 == null || chkQuantity4 == "")
+			 			{
+			 				textview2.setText("Purchase successful");
+			 				PortfolioSellFragment.setCash(cash - y*price);
+			 				PortfolioSellFragment.setSymbol4(textBox.getText().toString());
+			 				PortfolioSellFragment.setQuantity4(x);
+			 				PortfolioSellFragment.setCheckBoxOn4True();
+			 				textview.setText(String.format("%.2f", cash - y*price));
+			 			}
+			 			
+			 			else
+			 			{
+			 				textview2.setText("No space for new stocks");
+			 			}
+			 		}	
 			 	}
 			 	else
 			 	{
 			 		textview2.setText("Not enough funds");
 			 	}
-			 }
+			 
 
+			 }
 		 }
 		 catch (NumberFormatException e)
 		 {
@@ -222,8 +362,9 @@ public class BuyFragment extends Fragment implements OnClickListener{
 
 	 }
 	 
-	     }
- 
+
+	 }
+
  
      
      

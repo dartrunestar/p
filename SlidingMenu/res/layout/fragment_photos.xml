@@ -60,9 +60,10 @@
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:text="" />
-
-            <RadioButton
+            
+            <CheckBox
                 android:id="@+id/radioStock1"
+                android:name="@+name/radioStock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:enabled="false" />
@@ -88,9 +89,11 @@
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:text="" />
-
-            <RadioButton
+            
+		  
+            <CheckBox
                 android:id="@+id/radioStock2"
+                android:name="@+name/radioStock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:enabled="false" />
@@ -107,8 +110,6 @@
                 android:layout_width="25dp"
                 android:layout_height="wrap_content"
                 android:ems="10" >
-
-
             </TextView>
 
             <TextView
@@ -117,14 +118,14 @@
                 android:layout_height="wrap_content"
                 android:text="" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/radioStock3"
+                android:name="@+name/radioStock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:enabled="false" />
-
         </TableRow>
-        
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -135,8 +136,6 @@
                 android:layout_width="25dp"
                 android:layout_height="wrap_content"
                 android:ems="10" >
-
-
             </TextView>
 
             <TextView
@@ -145,14 +144,14 @@
                 android:layout_height="wrap_content"
                 android:text="" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/radioStock4"
+                android:name="@+name/radioStock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:enabled="false" />
-
         </TableRow>
-        
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -163,8 +162,6 @@
                 android:layout_width="25dp"
                 android:layout_height="wrap_content"
                 android:ems="10" >
-
-
             </TextView>
 
             <TextView
@@ -172,14 +169,15 @@
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:text="" />
-
-            <RadioButton
+            <CheckBox
                 android:id="@+id/radioStock5"
+                android:name="@+name/radioStock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:enabled="false" />
+                android:enabled="false" /> 
 
         </TableRow>
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
