@@ -1,8 +1,9 @@
 package info.androidhive.StockEProject;
 
 import java.io.IOException;
+
 import java.io.InputStreamReader;
-import java.lang.reflect.Method;
+
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -17,7 +18,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioButton;
+
 import android.widget.TextView;
 
 
@@ -30,19 +31,24 @@ public class PortfolioSellFragment extends Fragment implements OnClickListener{
 	public static double cash = 2000;
 	public static double price;
 
-	public static String[] symbol = new String[9];
-	public static String[] quantity = new String[9];
-	public static TextView[] label = new TextView[9];
+	public static String[] symbol = new String[10];
+	public static String[] quantity = new String[10];
+	public static TextView[] label = new TextView[10];
 	public static TextView textBox;
-	public static TextView[] stock = new TextView[9];
+	public static TextView[] stock = new TextView[10];
 	public static TextView message;
 	public static EditText txtQuantity;
-	public static CheckBox[] checkBox = new CheckBox[9];
+	public static CheckBox[] checkBox = new CheckBox[10];
 	public static boolean checkBox0ON = false;
 	public static boolean checkBox1ON = false;
 	public static boolean checkBox2ON = false;
 	public static boolean checkBox3ON = false;
 	public static boolean checkBox4ON = false;
+	public static boolean checkBox5ON = false;
+	public static boolean checkBox6ON = false;
+	public static boolean checkBox7ON = false;
+	public static boolean checkBox8ON = false;
+	public static boolean checkBox9ON = false;
 
     private Button bnSell = null;
 
@@ -50,7 +56,7 @@ public class PortfolioSellFragment extends Fragment implements OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
  
-        View rootView = inflater.inflate(R.layout.fragment_photos, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_sell, container, false);
 
 
 
@@ -71,6 +77,16 @@ public class PortfolioSellFragment extends Fragment implements OnClickListener{
         checkBox[3].setEnabled(checkBox3ON);
         checkBox[4] = (CheckBox) rootView.findViewById(R.id.radioStock5);
         checkBox[4].setEnabled(checkBox4ON);
+        checkBox[5] = (CheckBox) rootView.findViewById(R.id.radioStock6);
+        checkBox[5].setEnabled(checkBox5ON);
+        checkBox[6] = (CheckBox) rootView.findViewById(R.id.radioStock7);
+        checkBox[6].setEnabled(checkBox6ON);
+        checkBox[7] = (CheckBox) rootView.findViewById(R.id.radioStock8);
+        checkBox[7].setEnabled(checkBox7ON);
+        checkBox[8] = (CheckBox) rootView.findViewById(R.id.radioStock9);
+        checkBox[8].setEnabled(checkBox8ON);
+        checkBox[9] = (CheckBox) rootView.findViewById(R.id.radioStock10);
+        checkBox[9].setEnabled(checkBox9ON);
         
         stock[0] = (TextView) rootView.findViewById(R.id.stock_1);
         stock[0].setText(quantity[0]);
@@ -244,6 +260,51 @@ public class PortfolioSellFragment extends Fragment implements OnClickListener{
 							stock[x].setText(quantity[x]);
 						setCheckBoxOn4False();
 						}
+						
+						else if (x==5)
+						{
+							setSymbol5("");
+							setQuantity5("");
+							label[x].setText(symbol[x]);
+							stock[x].setText(quantity[x]);
+						setCheckBoxOn5False();
+						}
+						
+						else if (x==6)
+						{
+							setSymbol6("");
+							setQuantity6("");
+							label[x].setText(symbol[x]);
+							stock[x].setText(quantity[x]);
+						setCheckBoxOn6False();
+						}
+						
+						else if (x==7)
+						{
+							setSymbol7("");
+							setQuantity7("");
+							label[x].setText(symbol[x]);
+							stock[x].setText(quantity[x]);
+						setCheckBoxOn7False();
+						}
+						
+						else if (x==8)
+						{
+							setSymbol8("");
+							setQuantity8("");
+							label[x].setText(symbol[x]);
+							stock[x].setText(quantity[x]);
+						setCheckBoxOn8False();
+						}
+						
+						else if (x==9)
+						{
+							setSymbol9("");
+							setQuantity9("");
+							label[x].setText(symbol[x]);
+							stock[x].setText(quantity[x]);
+						setCheckBoxOn9False();
+						}
 					}
 					else if (availableQuantity-chosenQuantity != 0)
 					{
@@ -276,6 +337,36 @@ public class PortfolioSellFragment extends Fragment implements OnClickListener{
 						{
 						remaining = availableQuantity-chosenQuantity;
 						setQuantity4(Integer.toString(remaining));
+						stock[x].setText(quantity[x]);
+						}
+						else if (x==5)
+						{
+						remaining = availableQuantity-chosenQuantity;
+						setQuantity5(Integer.toString(remaining));
+						stock[x].setText(quantity[x]);
+						}
+						else if (x==6)
+						{
+						remaining = availableQuantity-chosenQuantity;
+						setQuantity6(Integer.toString(remaining));
+						stock[x].setText(quantity[x]);
+						}
+						else if (x==7)
+						{
+						remaining = availableQuantity-chosenQuantity;
+						setQuantity7(Integer.toString(remaining));
+						stock[x].setText(quantity[x]);
+						}
+						else if (x==8)
+						{
+						remaining = availableQuantity-chosenQuantity;
+						setQuantity8(Integer.toString(remaining));
+						stock[x].setText(quantity[x]);
+						}
+						else if (x==9)
+						{
+						remaining = availableQuantity-chosenQuantity;
+						setQuantity9(Integer.toString(remaining));
 						stock[x].setText(quantity[x]);
 						}
 					}
@@ -350,6 +441,29 @@ public class PortfolioSellFragment extends Fragment implements OnClickListener{
 		return symbol[5];
 	}
 	
+	public static String getSymbol6()
+	{
+		return symbol[6];
+	}
+
+	public static String getSymbol7()
+	{
+		return symbol[7];
+	}
+	
+	public static String getSymbol8()
+	{
+		return symbol[8];
+	}
+
+	
+	public static String getSymbol9()
+	{
+		return symbol[9];
+	}
+
+
+	
 	// SET SYMBOLS
 	public static void setSymbol0(String var) {
 		symbol[0] = var;
@@ -371,6 +485,21 @@ public class PortfolioSellFragment extends Fragment implements OnClickListener{
 		symbol[5] = var;
 		}
 
+	public static void setSymbol6(String var) {
+		symbol[6] = var;
+		}
+	
+	public static void setSymbol7(String var) {
+		symbol[7] = var;
+		}
+	public static void setSymbol8(String var) {
+		symbol[8] = var;
+		}	
+	public static void setSymbol9(String var) {
+		symbol[9] = var;
+		}
+
+	
 	// GET AND SET QUANTITIES
 	public static String getQuantity0() {
 		return quantity[0];
@@ -414,7 +543,35 @@ public class PortfolioSellFragment extends Fragment implements OnClickListener{
 		quantity[5] = var;
 		}
 	
+	public static String getQuantity6() {
+		return quantity[6];
+		}
+	public static void setQuantity6(String var) {
+		quantity[6] = var;
+		}
 	
+	public static String getQuantity7() {
+		return quantity[7];
+		}
+	public static void setQuantity7(String var) {
+		quantity[7] = var;
+		}
+	
+	public static String getQuantity8() {
+		return quantity[8];
+		}
+	public static void setQuantity8(String var) {
+		quantity[8] = var;
+		}
+	
+	public static String getQuantity9() {
+		return quantity[9];
+		}
+	public static void setQuantity9(String var) {
+		quantity[9] = var;
+		}
+	
+
 	// SET CHECKBOXES
 	public static void setCheckBoxOn0True()
 	{
@@ -464,6 +621,55 @@ public class PortfolioSellFragment extends Fragment implements OnClickListener{
 	}
 
 	
+	public static void setCheckBoxOn5True()
+	{
+		checkBox5ON = true;
+	}
+	public static void setCheckBoxOn5False()
+	{
+		checkBox5ON = false;
+	}
+	
+	public static void setCheckBoxOn6True()
+	{
+		checkBox6ON = true;
+	}
+	public static void setCheckBoxOn6False()
+	{
+		checkBox6ON = false;
+	}
+	
+	public static void setCheckBoxOn7True()
+	{
+		checkBox7ON = true;
+	}
+	public static void setCheckBoxOn7False()
+	{
+		checkBox7ON = false;
+	}
+	
+	public static void setCheckBoxOn8True()
+	{
+		checkBox8ON = true;
+	}
+	public static void setCheckBoxOn8False()
+	{
+		checkBox8ON = false;
+	}
+	
+
+	
+	public static void setCheckBoxOn9True()
+	{
+		checkBox9ON = true;
+	}
+	public static void setCheckBoxOn9False()
+	{
+		checkBox9ON = false;
+	}
+
+	
+	
 	// check CHECKBOXES
 	public static boolean checkBox0Enabled()
 	{
@@ -488,6 +694,31 @@ public class PortfolioSellFragment extends Fragment implements OnClickListener{
 	public static boolean checkBox4Enabled()
 	{
 		return checkBox[4].isEnabled();
+	}
+	
+	public static boolean checkBox5Enabled()
+	{
+		return checkBox[5].isEnabled();
+	}
+	
+	public static boolean checkBox6Enabled()
+	{
+		return checkBox[6].isEnabled();
+	}
+	
+	public static boolean checkBox7Enabled()
+	{
+		return checkBox[7].isEnabled();
+	}
+	
+	public static boolean checkBox8Enabled()
+	{
+		return checkBox[8].isEnabled();
+	}
+	
+	public static boolean checkBox9Enabled()
+	{
+		return checkBox[9].isEnabled();
 	}
 	
 	 @Override

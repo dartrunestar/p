@@ -20,12 +20,15 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
+        public static final int black=0x7f040008;
         public static final int counter_text_bg=0x7f040004;
         public static final int counter_text_color=0x7f040005;
+        public static final int gray=0x7f040007;
         public static final int list_background=0x7f040001;
         public static final int list_background_pressed=0x7f040002;
         public static final int list_divider=0x7f040003;
         public static final int list_item_title=0x7f040000;
+        public static final int orange=0x7f040006;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -52,16 +55,16 @@ public final class R {
         public static final int list_selector=0x7f02000b;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a002f;
+        public static final int action_settings=0x7f0a003f;
         public static final int bn_buy=0x7f0a0019;
         public static final int bn_retrieve=0x7f0a000a;
-        public static final int bn_sell=0x7f0a002d;
-        public static final int counter=0x7f0a0005;
+        public static final int bn_sell=0x7f0a002e;
+        public static final int counter=0x7f0a0006;
         public static final int drawer_layout=0x7f0a0000;
         public static final int edit_cash=0x7f0a0008;
         public static final int edit_symbol=0x7f0a0009;
         public static final int frame_container=0x7f0a0001;
-        public static final int icon=0x7f0a0003;
+        public static final int icon=0x7f0a0004;
         public static final int img_chart=0x7f0a001b;
         public static final int lbl_cash=0x7f0a0007;
         public static final int lbl_change=0x7f0a0015;
@@ -70,27 +73,43 @@ public final class R {
         public static final int lbl_last=0x7f0a0013;
         public static final int lbl_message=0x7f0a001c;
         public static final int lbl_perc_change=0x7f0a0017;
-        public static final int lbl_stocks=0x7f0a001d;
+        public static final int lbl_stocks=0x7f0a001e;
         public static final int lbl_symbol=0x7f0a000b;
         public static final int lbl_volume=0x7f0a0011;
+        public static final int listTextView=0x7f0a0003;
         public static final int list_slidermenu=0x7f0a0002;
-        public static final int radioStock1=0x7f0a0020;
-        public static final int radioStock2=0x7f0a0023;
-        public static final int radioStock3=0x7f0a0026;
-        public static final int radioStock4=0x7f0a0029;
-        public static final int radioStock5=0x7f0a002c;
-        public static final int stock1Name=0x7f0a001e;
-        public static final int stock2Name=0x7f0a0021;
-        public static final int stock3Name=0x7f0a0024;
-        public static final int stock4Name=0x7f0a0027;
-        public static final int stock5Name=0x7f0a002a;
+        public static final int radioStock1=0x7f0a0021;
+        public static final int radioStock10=0x7f0a003e;
+        public static final int radioStock2=0x7f0a0024;
+        public static final int radioStock3=0x7f0a0027;
+        public static final int radioStock4=0x7f0a002a;
+        public static final int radioStock5=0x7f0a002d;
+        public static final int radioStock6=0x7f0a0032;
+        public static final int radioStock7=0x7f0a0035;
+        public static final int radioStock8=0x7f0a0038;
+        public static final int radioStock9=0x7f0a003b;
+        public static final int stock10Name=0x7f0a003c;
+        public static final int stock1Name=0x7f0a001f;
+        public static final int stock2Name=0x7f0a0022;
+        public static final int stock3Name=0x7f0a0025;
+        public static final int stock4Name=0x7f0a0028;
+        public static final int stock5Name=0x7f0a002b;
+        public static final int stock6Name=0x7f0a0030;
+        public static final int stock7Name=0x7f0a0033;
+        public static final int stock8Name=0x7f0a0036;
+        public static final int stock9Name=0x7f0a0039;
         public static final int stockQuantity=0x7f0a001a;
-        public static final int stock_1=0x7f0a001f;
-        public static final int stock_2=0x7f0a0022;
-        public static final int stock_3=0x7f0a0025;
-        public static final int stock_4=0x7f0a0028;
-        public static final int stock_5=0x7f0a002b;
-        public static final int title=0x7f0a0004;
+        public static final int stock_1=0x7f0a0020;
+        public static final int stock_10=0x7f0a003d;
+        public static final int stock_2=0x7f0a0023;
+        public static final int stock_3=0x7f0a0026;
+        public static final int stock_4=0x7f0a0029;
+        public static final int stock_5=0x7f0a002c;
+        public static final int stock_6=0x7f0a0031;
+        public static final int stock_7=0x7f0a0034;
+        public static final int stock_8=0x7f0a0037;
+        public static final int stock_9=0x7f0a003a;
+        public static final int title=0x7f0a0005;
         public static final int tv_change=0x7f0a0016;
         public static final int tv_company=0x7f0a000e;
         public static final int tv_exchange=0x7f0a0010;
@@ -98,18 +117,22 @@ public final class R {
         public static final int tv_perc_change=0x7f0a0018;
         public static final int tv_symbol=0x7f0a000c;
         public static final int tv_volume=0x7f0a0012;
-        public static final int txtLabel=0x7f0a0006;
-        public static final int txt_quantity=0x7f0a002e;
+        public static final int txtLabel=0x7f0a001d;
+        public static final int txt_quantity=0x7f0a002f;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int drawer_list_item=0x7f030001;
-        public static final int fragment_community=0x7f030002;
-        public static final int fragment_find_people=0x7f030003;
-        public static final int fragment_home=0x7f030004;
-        public static final int fragment_pages=0x7f030005;
-        public static final int fragment_photos=0x7f030006;
-        public static final int fragment_whats_hot=0x7f030007;
+        public static final int custom_layout=0x7f030001;
+        public static final int drawer_list_item=0x7f030002;
+        public static final int fragment_buy=0x7f030003;
+        public static final int fragment_community=0x7f030004;
+        public static final int fragment_find_people=0x7f030005;
+        public static final int fragment_home=0x7f030006;
+        public static final int fragment_pages=0x7f030007;
+        public static final int fragment_photos=0x7f030008;
+        public static final int fragment_rss=0x7f030009;
+        public static final int fragment_sell=0x7f03000a;
+        public static final int fragment_whats_hot=0x7f03000b;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -135,6 +158,7 @@ public final class R {
         public static final int perc_change=0x7f06000f;
         public static final int retrieve=0x7f060008;
         public static final int retrieving=0x7f060011;
+        public static final int rss=0x7f060013;
         public static final int stock_chart=0x7f060010;
         public static final int stock_value=0x7f060006;
         public static final int symbol=0x7f060009;

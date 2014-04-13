@@ -44,6 +44,7 @@
     <string name="stock_chart">Stock Chart</string>
     <string name="retrieving">Retrieving&#8230;</string>
     <string name="cash">Cash:</string>
+    <string name="rss">RSS Feed:</string>
      
 
 </resources>
