@@ -2,7 +2,10 @@ package info.androidhive.StockEProject;
 
 import info.androidhive.StockEProject.R;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1870424b16404b18408974e4485b1112e8a991d9
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -95,6 +98,21 @@ public class BuyFragment extends Fragment implements OnClickListener{
 		
 				
 		
+<<<<<<< HEAD
+=======
+		textBox.setOnTouchListener(new OnTouchListener() {
+
+	        @Override
+	        public boolean onTouch(View v, MotionEvent event) {
+	            v.onTouchEvent(event);
+	            InputMethodManager imm = (InputMethodManager)v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+	            if (imm != null) {
+	                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+	            }                
+	            return true;
+	        }
+	    });
+>>>>>>> 1870424b16404b18408974e4485b1112e8a991d9
         return rootView;
 	}
 

@@ -81,8 +81,11 @@ public class RSSFragment extends Fragment {
 				ArrayAdapter<RSSItem> adapter =
 						new ArrayAdapter<RSSItem>(getActivity().getApplicationContext(),
 								R.layout.custom_layout,myRssFeed.getList());
+<<<<<<< HEAD
 				
 				
+=======
+>>>>>>> 1870424b16404b18408974e4485b1112e8a991d9
 				listView.setAdapter(adapter);
 				TextView textEmpty = (TextView) getView().findViewById(android.R.id.empty);
 				textEmpty.setText("");
