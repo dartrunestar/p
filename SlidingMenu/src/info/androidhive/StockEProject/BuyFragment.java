@@ -1,29 +1,27 @@
 package info.androidhive.StockEProject;
 
-import info.androidhive.StockEProject.R;
-
-
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+
 import android.app.Fragment;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
 public class BuyFragment extends Fragment implements OnClickListener{
 	
 
@@ -94,7 +92,7 @@ public class BuyFragment extends Fragment implements OnClickListener{
 			}});	
 		
 				
-		
+
         return rootView;
 	}
 
